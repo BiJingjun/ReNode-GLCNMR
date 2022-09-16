@@ -1,13 +1,15 @@
 # Graph Learning-Convolutional Networks
 
-This is a TensorFlow implementation of Graph Learning-Convolutional Networks for the task of (semi-supervised) classification of nodes in a graph, as described in our paper:
+This is a TensorFlow implementation of Re-weight Nodes and Graph Learning Convolutional Network with Mani-fold Regularization (ReNode-GLCNMR) for the task of (semi-supervised) classification of nodes in a graph, as described in our paper:
  
-Bo Jiang, Ziyan Zhang, [Semi-supervised Learning with Graph Learning-Convolutional Networks](http://http://openaccess.thecvf.com/content_CVPR_2019/papers/Jiang_Semi-Supervised_Learning_With_Graph_Learning-Convolutional_Networks_CVPR_2019_paper.pdf) (CVPR 2019)
+Fadi Dornaikaa, Jingjun Bi, Chongsheng Zhang, [A Unified Deep Semi-supervised Graph Learning Scheme Based on Nodes
+Re-weighting and Manifold Regularization]
 
 
 ## Introduction
 
-In this repo, we provide GLCN's code with the Cora and Citeseer datasets as example. The graph convolution method used in this code is provided by Thomas N. Kipf, Max Welling, [Semi-Supervised Classification with Graph Convolutional Networks](http://arxiv.org/abs/1609.02907) (ICLR 2017).
+In this repo, we provide ReNode-GLCNMR's code with the Scene15 datasets as example. The GLCN method used in this code is provided by Bo Jiang, Ziyan Zhang, [Semi-supervised Learning with Graph Learning-Convolutional Networks](http://http://openaccess.thecvf.com/content_CVPR_2019/papers/Jiang_Semi-Supervised_Learning_With_Graph_Learning-Convolutional_Networks_CVPR_2019_paper.pdf) (CVPR 2019)
+
 
 ## Requirements
 The codebase is implemented in Python 3.6.8. package versions used for development are just below
@@ -19,19 +21,21 @@ The codebase is implemented in Python 3.6.8. package versions used for developme
 
 ```bash
 cd glcn
-python run_cora.py
+python run_scence.py
 ```
 
 ## Data
 
-There are three entries for the code.
-* Feature matrix (feature.mat): An n * p sparse matrix, where n represents the number of nodes, and p represents the feature dimension of each node.
+There are seven entries for the code.
+* Feature matrix (feat.mat): An n * p sparse matrix, where n represents the number of nodes, and p represents the feature dimension of each node.
 * Adjacency matrix (adj.mat): An n * n sparse matrix, where n represents the number of nodes.
 * Label matrix (label.mat): An n * c matrix, where n represents the number of nodes, c represents the number of classes, and the label of the node is represented by onehot.
+* ReNode_weigth matrix (scence1rnp15w5s30.mat): An 1 * n matrix, where n represents the number of nodes.
+* Train index matrix (scence1reid.mat): An 1 * n matrix, where n represents the number of nodes.
+* Validation index matrix (scence1vaid.mat): An 1 * n matrix, where n represents the number of nodes.
+* Test index matrix (scence1teid.mat): An 1 * n matrix, where n represents the number of nodes.
 
-We provide the Cora and Citeseer datasets as example. The original datasets can be found here: http://linqs.cs.umd.edu/projects/projects/lbc/. In our version (see `data` folder) we use dataset splits provided by https://github.com/kimiyoung/planetoid (Zhilin Yang, William W. Cohen, Ruslan Salakhutdinov, [Revisiting Semi-Supervised Learning with Graph Embeddings](https://arxiv.org/abs/1603.08861), ICML 2016). 
-
-If you want to use your own dataset, please process the data into the above state, and look at the `load_data()` function in `utils.py` for an example.
+We provide the Scene15 datasets as example. In our paper, we perform experiments on eight benchmark datasets, including three widely used Plantoid Paper Citation Graphs (Citeseer, Cora, and Pubmed), a co-authorship graph (Coauthor CS) based on the Microsoft Academic Graph, and four image datasets (CIFAR10 , SVHN, MNIST, and Scene15) (see `data` folder). 
 
 
 ## Cite
@@ -40,10 +44,10 @@ Please cite our paper if you use this code in your own work:
 
 ```
 @inproceedings{jiang2019semi,
-  title={Semi-supervised learning with graph learning-convolutional networks},
-  author={Jiang, Bo and Zhang, Ziyan and Lin, Doudou and Tang, Jin and Luo, Bin},
-  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
-  pages={11313--11320},
-  year={2019}
+  title={A Unified Deep Semi-supervised Graph Learning Scheme Based on Nodes Re-weighting and Manifold Regularization},
+  author={Fadi Dornaikaa, Jingjun Bi, Chongsheng Zhang},
+  booktitle={},
+  pages={},
+  year={}
 }
 ```
