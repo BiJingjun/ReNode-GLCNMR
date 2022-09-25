@@ -30,7 +30,7 @@ There are seven entries for the code.
 * Feature matrix (feat.mat): An n * p sparse matrix, where n represents the number of nodes, and p represents the feature dimension of each node.
 * Adjacency matrix (adj.mat): An n * n sparse matrix, where n represents the number of nodes.
 * Label matrix (label.mat): An n * c matrix, where n represents the number of nodes, c represents the number of classes, and the label of the node is represented by onehot.
-* ReNode_weigth matrix (scence1rnp15w5s30.mat): An 1 * n matrix, where n represents the number of nodes. This matrix come from [ReNode](https://github.com/BiJingjun/ReNode)
+* ReNode_weight matrix (scence1rnp15w5s30.mat): An 1 * n matrix, where n represents the number of nodes. This matrix come from [ReNode](https://github.com/BiJingjun/ReNode)
 * Train index matrix (scence1reid.mat): An 1 * n matrix, where n represents the number of nodes.
 * Validation index matrix (scence1vaid.mat): An 1 * n matrix, where n represents the number of nodes.
 * Test index matrix (scence1teid.mat): An 1 * n matrix, where n represents the number of nodes.
